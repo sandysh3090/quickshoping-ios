@@ -52,6 +52,7 @@
 		CA7281111C82180900F642F0 /* Luhn.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281051C82180900F642F0 /* Luhn.m */; settings = {ASSET_TAGS = (); }; };
 		CA7281121C82180900F642F0 /* NSString+Additional.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281071C82180900F642F0 /* NSString+Additional.m */; settings = {ASSET_TAGS = (); }; };
 		CA7281151C82184300F642F0 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281141C82184300F642F0 /* PaymentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281181C8257DB00F642F0 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281171C8257DB00F642F0 /* HistoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAED33D21C7DEC5100B6B0EB /* reviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED33D11C7DEC5100B6B0EB /* reviewTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAED33D51C7DEFA400B6B0EB /* QRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED33D41C7DEFA400B6B0EB /* QRCodeScannerView.m */; settings = {ASSET_TAGS = (); }; };
 		CAF088661C7DBE9500B33CEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF088651C7DBE9500B33CEC /* main.m */; };
@@ -159,6 +160,8 @@
 		CA7281071C82180900F642F0 /* NSString+Additional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additional.m"; sourceTree = "<group>"; };
 		CA7281131C82184300F642F0 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		CA7281141C82184300F642F0 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		CA7281161C8257DB00F642F0 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		CA7281171C8257DB00F642F0 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		CAED33D01C7DEC5100B6B0EB /* reviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reviewTableViewCell.h; sourceTree = "<group>"; };
 		CAED33D11C7DEC5100B6B0EB /* reviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewTableViewCell.m; sourceTree = "<group>"; };
 		CAED33D31C7DEFA400B6B0EB /* QRCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScannerView.h; sourceTree = "<group>"; };
@@ -335,12 +338,14 @@
 				CAF088681C7DBE9500B33CEC /* AppDelegate.m */,
 				CAF0886A1C7DBE9500B33CEC /* ViewController.h */,
 				CAF0886B1C7DBE9500B33CEC /* ViewController.m */,
-				CA7280A01C817BF900F642F0 /* checkoutViewController.h */,
-				CA7280A11C817BF900F642F0 /* checkoutViewController.m */,
 				CA7280BB1C81AA2300F642F0 /* LocationListViewController.h */,
 				CA7280B91C81A9FE00F642F0 /* LocationListViewController.m */,
 				CA7281131C82184300F642F0 /* PaymentViewController.h */,
 				CA7281141C82184300F642F0 /* PaymentViewController.m */,
+				CA7280A01C817BF900F642F0 /* checkoutViewController.h */,
+				CA7280A11C817BF900F642F0 /* checkoutViewController.m */,
+				CA7281161C8257DB00F642F0 /* HistoryViewController.h */,
+				CA7281171C8257DB00F642F0 /* HistoryViewController.m */,
 				CAF0886D1C7DBE9500B33CEC /* Main.storyboard */,
 				CAF088701C7DBE9500B33CEC /* Assets.xcassets */,
 				CAF088751C7DBE9500B33CEC /* Info.plist */,
@@ -498,6 +503,7 @@
 				CA7280E71C81DABC00F642F0 /* SDWebImageManager.m in Sources */,
 				CA7280AB1C8189E300F642F0 /* Item.m in Sources */,
 				CA7281091C82180900F642F0 /* BKCardNumberField.m in Sources */,
+				CA7281181C8257DB00F642F0 /* HistoryViewController.m in Sources */,
 				CA72809A1C816FEA00F642F0 /* NSObject+SBJSON.m in Sources */,
 				CA72809F1C816FEA00F642F0 /* SBJsonWriter.m in Sources */,
 				CA7280E51C81DABC00F642F0 /* SDWebImageDownloader.m in Sources */,

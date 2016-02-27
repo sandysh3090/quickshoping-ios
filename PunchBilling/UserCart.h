@@ -24,7 +24,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionaryRepresentation;
 
-- (void)addItem:(Item*)item;
 + (UserCart *)sharedCart;
 - (void)emptyCart;
 @end

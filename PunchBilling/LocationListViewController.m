@@ -119,6 +119,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnHistoryTapped:(id)sender {
+    NSArray *arr = [[NSUserDefaults standardUserDefaults] valueForKey:HISTORY_KEY];
+    if (arr && arr.count) {
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"HistoryViewController"] animated:YES];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"History" message:@"You don't have history" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 

@@ -8,9 +8,10 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
-#define HOSTNAME @"http://192.168.1.6/pos_bill"
+#define HOSTNAME @"http://posbilling.16mb.com"
 #define API_PATH  [NSString stringWithFormat:@"%@/api/v1/", HOSTNAME]
 #define IMG_STR_URL(name,width,height) [NSString stringWithFormat:@"%@/common/ImageResize.php?imagename=%@&height=%@&width=%@", HOSTNAME, name,width,height]
+#define HISTORY_KEY @"HISTORY_USER_DATA"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

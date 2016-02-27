@@ -13,6 +13,7 @@
 #import "JSON.h"
 #import "checkoutViewController.h"
 #import "PaymentDetail.h"
+#import "MBProgressHUD.h"
 
 #define CC_DATA_STORE @"CC_data"
 
@@ -101,7 +102,8 @@
                 NSDictionary *bodyD=[[UserCart sharedCart] dictionaryRepresentation];
                 [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/NO/%@",API_PATH,self.usercart.itemOurPrice] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
                     NSLog(@"ghgh %@",response);
-                    billDIC=[[NSDictionary alloc]initWithDictionary:response];
+                    billDIC=[[[NSDictionary alloc]initWithDictionary:response] mutableCopy];
+                    [billDIC setValue:totalAmount.text forKey:@"amount_bill"];
                     [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
                     
                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -148,15 +150,17 @@
     }
     self.usercart.paymentDetail.cardHolderName=[NSString stringWithFormat:@"%@ %@",txtFName.text,txtLName.text];
     self.usercart.paymentDetail.cardNo=txtCardNumber.text;
-    
+    [[MBProgressHUD showHUDAddedTo:self.view animated:YES] setLabelText:@"Processing"];
     PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
     NSDictionary *bodyD=[self.usercart dictionaryRepresentation];
     [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/YES/%@",API_PATH,self.usercart.itemOurPrice] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
         NSLog(@"ghgh %@",response);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         billDIC=[[NSDictionary alloc]initWithDictionary:response];
         [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"Network not reachable,try again later" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
     }];

@@ -20,9 +20,27 @@
     [super viewDidLoad];
     NSLog(@"billdic%@",self.billDic);
     backtohome.layer.cornerRadius=5.0;
+    [self storeBillHisotry:self.billDic];
     CIImage *img=[self createQRForString:[self.billDic valueForKey:@"bill_id"]];
     qrcodeimage.image=[UIImage imageWithCIImage:img];
     // Do any additional setup after loading the view.
+}
+
+- (void)storeBillHisotry:(NSDictionary*)dict {
+    NSUserDefaults *stdDefault = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *arrM = [[stdDefault valueForKey:HISTORY_KEY] mutableCopy];
+    if (!arrM) {
+        arrM = [NSMutableArray new];
+    }
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"bill_id=%@", dict[@"bill_id"]];
+    NSArray *arrCheck = [arrM filteredArrayUsingPredicate:predicate];
+    if (!(arrCheck && arrCheck.count)) {
+        if (dict) {
+            [arrM insertObject:dict atIndex:0];
+            [stdDefault setValue:arrM forKey:HISTORY_KEY];
+            [stdDefault synchronize];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

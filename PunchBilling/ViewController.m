@@ -133,6 +133,7 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
        self.codeScannerView.alpha=0.0;
         newCaptureVideoPreviewLayer.hidden=YES;
         [captureSession stopRunning];
+        [[MBProgressHUD showHUDAddedTo:self.view animated:YES] setLabelText:@"fatching"];
         [self getProductDetails:code];
         
     }
@@ -140,26 +141,22 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 
 
 -(void)getProductDetails:(NSString *)barcode {
-    NSError *error;
-        NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@product/scan/%@",API_PATH,barcode]] encoding:NSUTF8StringEncoding error:&error];
-    NSLog(@"data %@ error %@", str, error);
-    if (!error) {
-        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"%@",dictionary);
-        
-        selectedItem = [[Item alloc] initWithDictionary:dictionary];
-        
+    PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
+    [service getSoapApiResponse:[NSString stringWithFormat:@"%@product/scan/%@",API_PATH,barcode] setHTTPMethod:@"GET" bodydata:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
+        selectedItem = [[Item alloc] initWithDictionary:response];
         updateindex=0.0;
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self editModeforproduct];
-    } else {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"This product is not available in stock." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.codeScannerView.alpha=1.0;
         newCaptureVideoPreviewLayer.hidden=NO;
         [captureSession startRunning];
-    }
-
+    }];
+    
    
 }
 
