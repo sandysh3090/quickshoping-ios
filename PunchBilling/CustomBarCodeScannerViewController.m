@@ -1,9 +1,9 @@
 //
 //  CustomBarCodeScannerViewController.m
-//  Punchh Framework
+//  ios dev Framework
 //
-//  Created by Hemant on 10/15/13.
-//  Copyright (c) 2013 Punchh. All rights reserved.
+//  Created by sandeep sharma on 10/15/13.
+//  Copyright (c) 2013 ios dev. All rights reserved.
 //
 
 #import "CustomBarCodeScannerViewController.h"

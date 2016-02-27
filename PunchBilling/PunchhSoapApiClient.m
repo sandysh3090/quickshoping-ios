@@ -1,9 +1,9 @@
 //
-//  PunchhSoapApiClient.m
-//  Punchh
+//  SoapApiClient.m
+//  
 //
 //  Created by sandeep kumar sharma on 27/11/15.
-//  Copyright © 2015 Punchh Inc. All rights reserved.
+//  Copyright © 2015 IOS dev Inc. All rights reserved.
 //
 
 #import "PunchhSoapApiClient.h"

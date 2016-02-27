@@ -97,7 +97,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H1E-Vc-OiZ">
                                                     <rect key="frame" x="252" y="30" width="58" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -279,7 +279,7 @@
                         <outlet property="productdetail" destination="IRN-jv-tYB" id="x35-2B-yTM"/>
                         <outlet property="productimg" destination="hJ2-Ad-94r" id="Glh-d3-JLM"/>
                         <outlet property="scanButton" destination="jji-3L-nUj" id="Eed-vK-8UV"/>
-                        <segue destination="AdI-QO-4pM" kind="push" identifier="chekoutViewcontroller" id="ssL-2P-kpv"/>
+                        <segue destination="BG9-Nb-P4A" kind="push" identifier="paymentPage" id="SxC-Py-l5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -312,10 +312,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WuA-W8-pAr">
-                                <rect key="frame" x="101" y="379" width="118" height="30"/>
+                                <rect key="frame" x="89" y="379" width="143" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Back to Home "/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back to Home ">
+                                    <color key="titleColor" red="0.15686274510000001" green="0.094117647060000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="BacktohomeBtnTap:" destination="AdI-QO-4pM" eventType="touchUpInside" id="f82-FT-6Cc"/>
                                 </connections>
@@ -325,12 +328,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="eo3-bX-tOt"/>
                     <connections>
+                        <outlet property="backtohome" destination="WuA-W8-pAr" id="Uuo-Qi-bvH"/>
                         <outlet property="qrcodeimage" destination="tDs-xe-Q5X" id="BoC-mm-J8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSh-qW-yX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667" y="-37"/>
+            <point key="canvasLocation" x="1081" y="-37"/>
         </scene>
         <!--Location List View Controller-->
         <scene sceneID="4XJ-n1-hmR">
@@ -443,13 +447,229 @@
             </objects>
             <point key="canvasLocation" x="-225" y="-37"/>
         </scene>
+        <!--Payment View Controller-->
+        <scene sceneID="cVD-H7-vEd">
+            <objects>
+                <viewController id="BG9-Nb-P4A" customClass="PaymentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUZ-Uy-akb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EyU-fH-F4j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.094117647060000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rSJ-ht-Ehf">
+                                <rect key="frame" x="0.0" y="527" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="PROCEED TO PAY">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnProceedTapped:" destination="BG9-Nb-P4A" eventType="touchUpInside" id="9m8-dr-EmQ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="nX4-qH-hwV">
+                                <rect key="frame" x="14" y="148" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BG9-Nb-P4A" id="hQE-N2-gMy"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Bmh-0B-LkP" customClass="BKCardNumberField">
+                                <rect key="frame" x="14" y="274" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BG9-Nb-P4A" id="5ni-44-qh7"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAYMENT VIA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tyN-gg-MSs">
+                                <rect key="frame" x="14" y="98" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JQn-6L-svH">
+                                <rect key="frame" x="14" y="126" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month/Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X3b-hu-i20">
+                                <rect key="frame" x="14" y="192" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oV7-20-gb9">
+                                <rect key="frame" x="14" y="252" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CVC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9cX-vo-j0E">
+                                <rect key="frame" x="164" y="192" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="IUt-mg-t4F">
+                                <rect key="frame" x="164" y="148" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BG9-Nb-P4A" id="TAa-D6-XHJ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99w-MF-fcV">
+                                <rect key="frame" x="164" y="126" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or" id="bSE-G9-GRj">
+                                <rect key="frame" x="0.0" y="307" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yUc-HO-z8y">
+                                <rect key="frame" x="0.0" y="344" width="320" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" id="sc3-ea-gjC" customClass="BKCardExpiryField">
+                                <rect key="frame" x="14" y="215" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BG9-Nb-P4A" id="Zz9-Dt-nCG"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="fvS-gV-xnk">
+                                <rect key="frame" x="164" y="215" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BG9-Nb-P4A" id="Tf3-lq-E0J"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jeE-rc-BAC">
+                                <rect key="frame" x="115" y="98" width="61" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title=" CASH" image="cash_untap">
+                                    <color key="titleColor" red="0.4326670594" green="0.66274509800000003" blue="0.090684076820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title=" CASH" image="cash_tap"/>
+                                <connections>
+                                    <action selector="btnPaymentModeTapped:" destination="BG9-Nb-P4A" eventType="touchUpInside" id="ikb-z9-9Zg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wwl-pE-UuK">
+                                <rect key="frame" x="178" y="98" width="142" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title=" CREDIT CARD" image="debit_untap">
+                                    <color key="titleColor" red="0.74904466709999995" green="0.18784849170000001" blue="0.17570531310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="debit_tap">
+                                    <color key="titleColor" red="0.74904466709999995" green="0.18784849170000001" blue="0.17570531310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPaymentModeTapped:" destination="BG9-Nb-P4A" eventType="touchUpInside" id="TCW-13-mLF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_logo" id="0J3-Bk-l9P">
+                                <rect key="frame" x="144" y="15" width="32" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Al0-fh-fz5">
+                                <rect key="frame" x="4" y="21" width="40" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="bcak">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnTap:" destination="BG9-Nb-P4A" eventType="touchUpInside" id="ryZ-a7-9Cv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    BILLING AMOUNT (₹)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mnm-7b-O1G">
+                                <rect key="frame" x="1" y="61" width="177" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yra-pu-ie3">
+                                <rect key="frame" x="180" y="61" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aue-Wd-GDQ" appends="YES" id="RHt-5p-Gt4"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="ssw-bx-RSm"/>
+                    <connections>
+                        <outlet property="ScrollCards" destination="yUc-HO-z8y" id="hl7-yF-OmY"/>
+                        <outlet property="btnCard" destination="Wwl-pE-UuK" id="Z6i-st-miu"/>
+                        <outlet property="btnCash" destination="jeE-rc-BAC" id="eDA-ka-9Br"/>
+                        <outlet property="orimg" destination="bSE-G9-GRj" id="Dg1-lH-Inw"/>
+                        <outlet property="totalAmount" destination="Yra-pu-ie3" id="ECA-OI-aHk"/>
+                        <outlet property="txtCardNumber" destination="Bmh-0B-LkP" id="XDD-FF-Nw8"/>
+                        <outlet property="txtCvc" destination="fvS-gV-xnk" id="XGW-bq-DfU"/>
+                        <outlet property="txtExp" destination="sc3-ea-gjC" id="tHp-cw-Xe5"/>
+                        <outlet property="txtFName" destination="nX4-qH-hwV" id="evA-Tk-zE2"/>
+                        <outlet property="txtLName" destination="IUt-mg-t4F" id="Mpp-B7-q9c"/>
+                        <segue destination="AdI-QO-4pM" kind="push" identifier="chekoutViewcontroller" id="HNt-kF-jR1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52e-WV-VFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aue-Wd-GDQ">
+                    <connections>
+                        <action selector="TxtResign:" destination="BG9-Nb-P4A" id="7hl-n1-xEA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="596" y="-37"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bar_scan" width="326" height="121"/>
         <image name="bcak" width="9" height="15"/>
+        <image name="cash_tap" width="14" height="14"/>
+        <image name="cash_untap" width="14" height="14"/>
         <image name="check_box" width="19" height="19"/>
+        <image name="debit_tap" width="14" height="14"/>
+        <image name="debit_untap" width="14" height="14"/>
         <image name="location_pin" width="14" height="14"/>
         <image name="nav_logo" width="42" height="31"/>
+        <image name="or" width="621" height="56"/>
         <image name="overlay" width="320" height="568"/>
         <image name="placeholder" width="256" height="256"/>
         <image name="product_imagea" width="49" height="60"/>

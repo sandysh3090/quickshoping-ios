@@ -167,6 +167,10 @@ NSString *const kUserCartTotalBill = @"total_bill";
 
 #pragma mark - My methods
 
+- (void)emptyCart {
+    [self.itemDetails removeAllObjects];
+}
+
 //- (void)addItem:(Item*)item {
 //    if (!self.itemDetails) {
 //        self.itemDetails = [NSMutableArray new];
