@@ -157,6 +157,7 @@
         NSLog(@"ghgh %@",response);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         billDIC=[[NSDictionary alloc]initWithDictionary:response];
+        [billDIC setValue:totalAmount.text forKey:@"amount_bill"];
         [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
