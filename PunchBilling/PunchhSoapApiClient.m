@@ -7,6 +7,7 @@
 //
 
 #import "PunchhSoapApiClient.h"
+#import "JSON.h"
 
 
 
@@ -14,16 +15,21 @@
 
 -(void)getSoapApiResponse:(NSString *)URLString
             setHTTPMethod:(NSString *)httpMthod
+                 bodydata:(NSString *)body
                   success:(void (^)(AFHTTPRequestOperation *, id))success
                   failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
 {
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     [theRequest setHTTPMethod:httpMthod];
+    [theRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    [theRequest setHTTPBody:data];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:theRequest];
-    
-    operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    //operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-         success(operation, responseObject);
+        NSDictionary* resultsd = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]JSONValue];
+         success(operation, resultsd);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         failure(operation, error);

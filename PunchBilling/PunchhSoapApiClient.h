@@ -13,6 +13,7 @@
 
 -(void)getSoapApiResponse:(NSString *)URLString
             setHTTPMethod:(NSString *)httpMthod
+                 bodydata:(NSString *)body
                   success:(void (^)(AFHTTPRequestOperation *, id))success
                   failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 

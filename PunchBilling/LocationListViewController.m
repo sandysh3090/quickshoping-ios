@@ -23,18 +23,17 @@
     self.navigationController.navigationBarHidden=YES;
     
     
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.01;
-    span.longitudeDelta = 0.01;
-    
-    [customOverlayMap setRegion:region animated:NO];
-    [customOverlayMap regionThatFits:region];
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [@"28.5827577" doubleValue];
+    coordinate.longitude = [@"77.0334179" doubleValue];
+    customOverlayMap.region = MKCoordinateRegionMakeWithDistance(coordinate, 20000, 20000);
+//    [customOverlayMap setRegion:region animated:NO];
+   // [customOverlayMap regionThatFits:region];
     
     // Do any additional setup after loading the view.
-    NSDictionary *temdic=[[NSDictionary alloc]initWithObjectsAndKeys:@"Relince Fresh",@"location",@"155,Purani delhi railway station",@"Address",@"28.5827577",@"lattitude",@"77.0334179",@"longitude",@"+918955767558",@"contactdetail", nil];
-    NSDictionary *temdic1=[[NSDictionary alloc]initWithObjectsAndKeys:@"Relince Fresh",@"location",@"25, near Jaipur Railway Station",@"Address",@"26.91978",@"lattitude",@"75.78790",@"longitude",@"8955767558",@"contactdetail", nil];
-    NSDictionary *temdic2=[[NSDictionary alloc]initWithObjectsAndKeys:@"Relince Trand",@"location",@"155,Purani delhi railway station",@"Address",@"28.66097",@"lattitude",@"77.22767",@"longitude",@"8955767558",@"contactdetail", nil];
+    NSDictionary *temdic=[[NSDictionary alloc]initWithObjectsAndKeys:@"Reliance Fresh",@"location",@"155,Purani delhi railway station",@"Address",@"28.5827577",@"lattitude",@"77.0334179",@"longitude",@"+918955767558",@"contactdetail", nil];
+    NSDictionary *temdic1=[[NSDictionary alloc]initWithObjectsAndKeys:@"Reliance Fresh",@"location",@"25, near Jaipur Railway Station",@"Address",@"26.91978",@"lattitude",@"75.78790",@"longitude",@"8955767558",@"contactdetail", nil];
+    NSDictionary *temdic2=[[NSDictionary alloc]initWithObjectsAndKeys:@"Reliance Trand",@"location",@"155,Purani delhi railway station",@"Address",@"28.66097",@"lattitude",@"77.22767",@"longitude",@"8955767558",@"contactdetail", nil];
     NSDictionary *temdic3=[[NSDictionary alloc]initWithObjectsAndKeys:@"Vishal Megamart",@"location",@"155,Purani delhi railway station",@"Address",@"28.66097",@"lattitude",@"77.22767",@"longitude",@"8955767558",@"contactdetail", nil];
     NSDictionary *temdic4=[[NSDictionary alloc]initWithObjectsAndKeys:@"Big Bazar",@"location",@"155,Purani delhi railway station",@"Address",@"28.66097",@"lattitude",@"77.22767",@"longitude",@"8955767558",@"contactdetail", nil];
     NSDictionary *temdic5=[[NSDictionary alloc]initWithObjectsAndKeys:@"Chinkara canteen",@"location",@"155,Purani delhi railway station",@"Address",@"28.66097",@"lattitude",@"-77.22767",@"longitude",@"8955767558",@"contactdetail", nil];

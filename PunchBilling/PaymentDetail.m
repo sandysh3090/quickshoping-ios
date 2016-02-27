@@ -26,6 +26,7 @@ NSString *const kPaymentDetailCardHolderName = @"card_holder_name";
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
 {
+
     return [[self alloc] initWithDictionary:dict];
 }
 

@@ -11,6 +11,6 @@
 @interface checkoutViewController : UIViewController {
     IBOutlet UIImageView *qrcodeimage;
 }
-@property(nonatomic,strong) NSArray *billArray;
+@property(nonatomic,strong) NSDictionary *billDic;
 
 @end

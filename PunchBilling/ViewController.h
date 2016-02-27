@@ -12,8 +12,10 @@
 @interface ViewController : UIViewController {
     IBOutlet UIButton *scanButton ,*cacelBtn,*addtoCartBtn,*addBtn,*minusBtn;
     IBOutlet UITableView *listofproductTbl;
-    IBOutlet UIView *editView;
-    IBOutlet UILabel *productName,*productPrice,*ourPrice,*productQuantity;
+    IBOutlet UIView *editView,*editsubview;
+    IBOutlet UILabel *productName,*productPrice,*ourPrice,*productQuantity,*productdetail;
+    IBOutlet UIImageView *productimg;
+    
 }
 
 

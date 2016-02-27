@@ -7,6 +7,7 @@
 //
 
 #import "checkoutViewController.h"
+#import "LocationListViewController.h"
 
 @interface checkoutViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CIImage *img=[self createQRForString:self.billArray];
+    NSLog(@"billdic%@",self.billDic);
+    CIImage *img=[self createQRForString:[self.billDic valueForKey:@"bill_id"]];
     qrcodeimage.image=[UIImage imageWithCIImage:img];
     // Do any additional setup after loading the view.
 }
@@ -27,15 +29,17 @@
 }
 
 - (CIImage *)createQRForString:(NSString *)billstring {
-     NSData *stringData = [@"sandeep" dataUsingEncoding: NSISOLatin1StringEncoding];
+     NSData *stringData = [billstring dataUsingEncoding: NSISOLatin1StringEncoding];
     CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
     [qrFilter setValue:stringData forKey:@"inputMessage"];
     
     return qrFilter.outputImage;
 }
 
--(IBAction)BackBtnTap:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+-(IBAction)BacktohomeBtnTap:(id)sender {
+//    LocationListViewController *locationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"locationviewcontroller"];
+//    [self.navigationController pushViewController:locationViewController animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
