@@ -156,7 +156,7 @@
     [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/YES/%@",API_PATH,self.usercart.itemOurPrice] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
         NSLog(@"ghgh %@",response);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        billDIC=[[NSDictionary alloc]initWithDictionary:response];
+        billDIC= [[[NSDictionary alloc]initWithDictionary:response] mutableCopy];
         [billDIC setValue:totalAmount.text forKey:@"amount_bill"];
         [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
         
@@ -223,13 +223,13 @@
         NSDictionary *dict = arrCards[i];
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0, ScrollCards.frame.size.width, ScrollCards.frame.size.height)];
         
-        UIButton *btnSavedCard=[[UIButton alloc] initWithFrame:CGRectMake(20, 20, ScrollCards.frame.size.width-40, ScrollCards.frame.size.height-40)];
+        UIButton *btnSavedCard=[[UIButton alloc] initWithFrame:CGRectMake(40, 20, ScrollCards.frame.size.width-80, ScrollCards.frame.size.height-40)];
         [btnSavedCard addTarget:self action:@selector(btnSelectCardTapped:) forControlEvents:UIControlEventTouchUpInside];
         [btnSavedCard setImage:[UIImage imageNamed:dict[@"img"]] forState:UIControlStateNormal];
         btnSavedCard.tag=i;
         [view addSubview:btnSavedCard];
         
-        UILabel *lblCardNumber = [[UILabel alloc] initWithFrame:CGRectMake(30, 90, ScrollCards.frame.size.width - 20, 80)];
+        UILabel *lblCardNumber = [[UILabel alloc] initWithFrame:CGRectMake(55, 90, ScrollCards.frame.size.width - 20, 80)];
         [lblCardNumber setNumberOfLines:0];
         [lblCardNumber setText:[NSString stringWithFormat:@"%@\nExpiry Date %@", [self changeEncryptText:dict[@"card_no"]], dict[@"exp"]]];
         [lblCardNumber setTextColor:[UIColor darkGrayColor]];

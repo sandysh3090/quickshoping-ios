@@ -133,6 +133,7 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
        self.codeScannerView.alpha=0.0;
         newCaptureVideoPreviewLayer.hidden=YES;
         [captureSession stopRunning];
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         [[MBProgressHUD showHUDAddedTo:self.view animated:YES] setLabelText:@"fatching"];
         [self getProductDetails:code];
         

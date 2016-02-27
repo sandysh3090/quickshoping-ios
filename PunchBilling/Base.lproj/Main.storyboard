@@ -50,10 +50,10 @@
                                     <action selector="scanBtnTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="loQ-BX-mwo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar_scan" id="GhH-rh-Oom">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GhH-rh-Oom">
                                 <rect key="frame" x="0.0" y="60" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_logo" id="5sy-in-oNO">
                                 <rect key="frame" x="144" y="20" width="32" height="31"/>
@@ -720,7 +720,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bar_scan" width="326" height="121"/>
         <image name="bcak" width="9" height="15"/>
         <image name="cash_tap" width="14" height="14"/>
         <image name="cash_untap" width="14" height="14"/>
