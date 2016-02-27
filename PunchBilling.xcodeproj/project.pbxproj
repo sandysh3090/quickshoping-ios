@@ -40,6 +40,18 @@
 		CA7280ED1C81DABC00F642F0 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280DB1C81DABC00F642F0 /* UIImageView+HighlightedWebCache.m */; settings = {ASSET_TAGS = (); }; };
 		CA7280EE1C81DABC00F642F0 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280DD1C81DABC00F642F0 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		CA7280EF1C81DABC00F642F0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280DF1C81DABC00F642F0 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281081C82180900F642F0 /* BKCardExpiryField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280F41C82180900F642F0 /* BKCardExpiryField.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281091C82180900F642F0 /* BKCardNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280F61C82180900F642F0 /* BKCardNumberField.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810A1C82180900F642F0 /* BKCardNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280F81C82180900F642F0 /* BKCardNumberFormatter.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810B1C82180900F642F0 /* BKCardNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280FA1C82180900F642F0 /* BKCardNumberLabel.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810C1C82180900F642F0 /* BKCardPatternInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280FC1C82180900F642F0 /* BKCardPatternInfo.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810D1C82180900F642F0 /* BKCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280FE1C82180900F642F0 /* BKCurrencyTextField.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810E1C82180900F642F0 /* BKForwardingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281001C82180900F642F0 /* BKForwardingTextField.m */; settings = {ASSET_TAGS = (); }; };
+		CA72810F1C82180900F642F0 /* BKMoneyKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA7281011C82180900F642F0 /* BKMoneyKit.bundle */; settings = {ASSET_TAGS = (); }; };
+		CA7281101C82180900F642F0 /* BKMoneyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281031C82180900F642F0 /* BKMoneyUtils.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281111C82180900F642F0 /* Luhn.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281051C82180900F642F0 /* Luhn.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281121C82180900F642F0 /* NSString+Additional.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281071C82180900F642F0 /* NSString+Additional.m */; settings = {ASSET_TAGS = (); }; };
+		CA7281151C82184300F642F0 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7281141C82184300F642F0 /* PaymentViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAED33D21C7DEC5100B6B0EB /* reviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED33D11C7DEC5100B6B0EB /* reviewTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAED33D51C7DEFA400B6B0EB /* QRCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED33D41C7DEFA400B6B0EB /* QRCodeScannerView.m */; settings = {ASSET_TAGS = (); }; };
 		CAF088661C7DBE9500B33CEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF088651C7DBE9500B33CEC /* main.m */; };
@@ -47,7 +59,6 @@
 		CAF0886C1C7DBE9500B33CEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0886B1C7DBE9500B33CEC /* ViewController.m */; };
 		CAF0886F1C7DBE9500B33CEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF0886D1C7DBE9500B33CEC /* Main.storyboard */; };
 		CAF088711C7DBE9500B33CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF088701C7DBE9500B33CEC /* Assets.xcassets */; };
-		CAF0887E1C7DC04600B33CEC /* PunchhZBarReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF0887D1C7DC04600B33CEC /* PunchhZBarReaderViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CAF088811C7DC0DF00B33CEC /* BarCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF088801C7DC0DF00B33CEC /* BarCodeScannerView.m */; settings = {ASSET_TAGS = (); }; };
 		CAF088871C7DCAE700B33CEC /* CustomBarCodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF088861C7DCAE700B33CEC /* CustomBarCodeScannerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FFB46461583900F9720625C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1E14BC530EE25986EA9B16 /* libPods.a */; };
@@ -125,6 +136,29 @@
 		CA7280DE1C81DABC00F642F0 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CA7280DF1C81DABC00F642F0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		CA7280F11C81DE5400F642F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CA7280F31C82180900F642F0 /* BKCardExpiryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardExpiryField.h; sourceTree = "<group>"; };
+		CA7280F41C82180900F642F0 /* BKCardExpiryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardExpiryField.m; sourceTree = "<group>"; };
+		CA7280F51C82180900F642F0 /* BKCardNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardNumberField.h; sourceTree = "<group>"; };
+		CA7280F61C82180900F642F0 /* BKCardNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardNumberField.m; sourceTree = "<group>"; };
+		CA7280F71C82180900F642F0 /* BKCardNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardNumberFormatter.h; sourceTree = "<group>"; };
+		CA7280F81C82180900F642F0 /* BKCardNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardNumberFormatter.m; sourceTree = "<group>"; };
+		CA7280F91C82180900F642F0 /* BKCardNumberLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardNumberLabel.h; sourceTree = "<group>"; };
+		CA7280FA1C82180900F642F0 /* BKCardNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardNumberLabel.m; sourceTree = "<group>"; };
+		CA7280FB1C82180900F642F0 /* BKCardPatternInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardPatternInfo.h; sourceTree = "<group>"; };
+		CA7280FC1C82180900F642F0 /* BKCardPatternInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardPatternInfo.m; sourceTree = "<group>"; };
+		CA7280FD1C82180900F642F0 /* BKCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCurrencyTextField.h; sourceTree = "<group>"; };
+		CA7280FE1C82180900F642F0 /* BKCurrencyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCurrencyTextField.m; sourceTree = "<group>"; };
+		CA7280FF1C82180900F642F0 /* BKForwardingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKForwardingTextField.h; sourceTree = "<group>"; };
+		CA7281001C82180900F642F0 /* BKForwardingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKForwardingTextField.m; sourceTree = "<group>"; };
+		CA7281011C82180900F642F0 /* BKMoneyKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BKMoneyKit.bundle; sourceTree = "<group>"; };
+		CA7281021C82180900F642F0 /* BKMoneyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMoneyUtils.h; sourceTree = "<group>"; };
+		CA7281031C82180900F642F0 /* BKMoneyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMoneyUtils.m; sourceTree = "<group>"; };
+		CA7281041C82180900F642F0 /* Luhn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luhn.h; sourceTree = "<group>"; };
+		CA7281051C82180900F642F0 /* Luhn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Luhn.m; sourceTree = "<group>"; };
+		CA7281061C82180900F642F0 /* NSString+Additional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additional.h"; sourceTree = "<group>"; };
+		CA7281071C82180900F642F0 /* NSString+Additional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additional.m"; sourceTree = "<group>"; };
+		CA7281131C82184300F642F0 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		CA7281141C82184300F642F0 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		CAED33D01C7DEC5100B6B0EB /* reviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reviewTableViewCell.h; sourceTree = "<group>"; };
 		CAED33D11C7DEC5100B6B0EB /* reviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewTableViewCell.m; sourceTree = "<group>"; };
 		CAED33D31C7DEFA400B6B0EB /* QRCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScannerView.h; sourceTree = "<group>"; };
@@ -138,8 +172,6 @@
 		CAF0886E1C7DBE9500B33CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAF088701C7DBE9500B33CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF088751C7DBE9500B33CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAF0887C1C7DC04600B33CEC /* PunchhZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PunchhZBarReaderViewController.h; sourceTree = "<group>"; };
-		CAF0887D1C7DC04600B33CEC /* PunchhZBarReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunchhZBarReaderViewController.m; sourceTree = "<group>"; };
 		CAF0887F1C7DC0DF00B33CEC /* BarCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeScannerView.h; sourceTree = "<group>"; };
 		CAF088801C7DC0DF00B33CEC /* BarCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeScannerView.m; sourceTree = "<group>"; };
 		CAF088851C7DCAE700B33CEC /* CustomBarCodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBarCodeScannerViewController.h; sourceTree = "<group>"; };
@@ -247,6 +279,34 @@
 			name = sdwebchche;
 			sourceTree = "<group>";
 		};
+		CA7280F21C82180900F642F0 /* BKMoneyKit */ = {
+			isa = PBXGroup;
+			children = (
+				CA7280F31C82180900F642F0 /* BKCardExpiryField.h */,
+				CA7280F41C82180900F642F0 /* BKCardExpiryField.m */,
+				CA7280F51C82180900F642F0 /* BKCardNumberField.h */,
+				CA7280F61C82180900F642F0 /* BKCardNumberField.m */,
+				CA7280F71C82180900F642F0 /* BKCardNumberFormatter.h */,
+				CA7280F81C82180900F642F0 /* BKCardNumberFormatter.m */,
+				CA7280F91C82180900F642F0 /* BKCardNumberLabel.h */,
+				CA7280FA1C82180900F642F0 /* BKCardNumberLabel.m */,
+				CA7280FB1C82180900F642F0 /* BKCardPatternInfo.h */,
+				CA7280FC1C82180900F642F0 /* BKCardPatternInfo.m */,
+				CA7280FD1C82180900F642F0 /* BKCurrencyTextField.h */,
+				CA7280FE1C82180900F642F0 /* BKCurrencyTextField.m */,
+				CA7280FF1C82180900F642F0 /* BKForwardingTextField.h */,
+				CA7281001C82180900F642F0 /* BKForwardingTextField.m */,
+				CA7281011C82180900F642F0 /* BKMoneyKit.bundle */,
+				CA7281021C82180900F642F0 /* BKMoneyUtils.h */,
+				CA7281031C82180900F642F0 /* BKMoneyUtils.m */,
+				CA7281041C82180900F642F0 /* Luhn.h */,
+				CA7281051C82180900F642F0 /* Luhn.m */,
+				CA7281061C82180900F642F0 /* NSString+Additional.h */,
+				CA7281071C82180900F642F0 /* NSString+Additional.m */,
+			);
+			path = BKMoneyKit;
+			sourceTree = "<group>";
+		};
 		CAF088581C7DBE9500B33CEC = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +339,8 @@
 				CA7280A11C817BF900F642F0 /* checkoutViewController.m */,
 				CA7280BB1C81AA2300F642F0 /* LocationListViewController.h */,
 				CA7280B91C81A9FE00F642F0 /* LocationListViewController.m */,
+				CA7281131C82184300F642F0 /* PaymentViewController.h */,
+				CA7281141C82184300F642F0 /* PaymentViewController.m */,
 				CAF0886D1C7DBE9500B33CEC /* Main.storyboard */,
 				CAF088701C7DBE9500B33CEC /* Assets.xcassets */,
 				CAF088751C7DBE9500B33CEC /* Info.plist */,
@@ -290,6 +352,7 @@
 		CAF088641C7DBE9500B33CEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA7280F21C82180900F642F0 /* BKMoneyKit */,
 				CA7280BE1C81DA8A00F642F0 /* sdwebchche */,
 				CA72808C1C816F5200F642F0 /* json */,
 				CA7280891C808D7E00F642F0 /* PunchhSoapApiClient.h */,
@@ -312,8 +375,6 @@
 				CAED33D41C7DEFA400B6B0EB /* QRCodeScannerView.m */,
 				CAF0887F1C7DC0DF00B33CEC /* BarCodeScannerView.h */,
 				CAF088801C7DC0DF00B33CEC /* BarCodeScannerView.m */,
-				CAF0887C1C7DC04600B33CEC /* PunchhZBarReaderViewController.h */,
-				CAF0887D1C7DC04600B33CEC /* PunchhZBarReaderViewController.m */,
 			);
 			name = "zbarsupporting file";
 			sourceTree = "<group>";
@@ -386,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA72810F1C82180900F642F0 /* BKMoneyKit.bundle in Resources */,
 				CAF088711C7DBE9500B33CEC /* Assets.xcassets in Resources */,
 				CAF0886F1C7DBE9500B33CEC /* Main.storyboard in Resources */,
 			);
@@ -435,19 +497,23 @@
 				CA7280E91C81DABC00F642F0 /* UIButton+WebCache.m in Sources */,
 				CA7280E71C81DABC00F642F0 /* SDWebImageManager.m in Sources */,
 				CA7280AB1C8189E300F642F0 /* Item.m in Sources */,
+				CA7281091C82180900F642F0 /* BKCardNumberField.m in Sources */,
 				CA72809A1C816FEA00F642F0 /* NSObject+SBJSON.m in Sources */,
 				CA72809F1C816FEA00F642F0 /* SBJsonWriter.m in Sources */,
 				CA7280E51C81DABC00F642F0 /* SDWebImageDownloader.m in Sources */,
 				CAED33D21C7DEC5100B6B0EB /* reviewTableViewCell.m in Sources */,
+				CA72810E1C82180900F642F0 /* BKForwardingTextField.m in Sources */,
 				CA7280E31C81DABC00F642F0 /* SDWebImageCompat.m in Sources */,
 				CA7280AC1C8189E300F642F0 /* Offers.m in Sources */,
 				CA7280B81C81A9E500F642F0 /* LocationListCell.m in Sources */,
 				CAED33D51C7DEFA400B6B0EB /* QRCodeScannerView.m in Sources */,
 				CA7280EF1C81DABC00F642F0 /* UIView+WebCacheOperation.m in Sources */,
-				CAF0887E1C7DC04600B33CEC /* PunchhZBarReaderViewController.m in Sources */,
+				CA72810C1C82180900F642F0 /* BKCardPatternInfo.m in Sources */,
 				CA7280B51C818A5D00F642F0 /* UserCart.m in Sources */,
+				CA72810A1C82180900F642F0 /* BKCardNumberFormatter.m in Sources */,
 				CA7280EE1C81DABC00F642F0 /* UIImageView+WebCache.m in Sources */,
 				CA7280EC1C81DABC00F642F0 /* UIImage+WebP.m in Sources */,
+				CA7281081C82180900F642F0 /* BKCardExpiryField.m in Sources */,
 				CA7280E21C81DABC00F642F0 /* SDImageCache.m in Sources */,
 				CA72809D1C816FEA00F642F0 /* SBJsonBase.m in Sources */,
 				CA7280EB1C81DABC00F642F0 /* UIImage+MultiFormat.m in Sources */,
@@ -456,16 +522,22 @@
 				CA7280ED1C81DABC00F642F0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CAF088871C7DCAE700B33CEC /* CustomBarCodeScannerViewController.m in Sources */,
 				CAF0886C1C7DBE9500B33CEC /* ViewController.m in Sources */,
+				CA7281121C82180900F642F0 /* NSString+Additional.m in Sources */,
 				CA7280A21C817BF900F642F0 /* checkoutViewController.m in Sources */,
+				CA7281101C82180900F642F0 /* BKMoneyUtils.m in Sources */,
 				CA72809E1C816FEA00F642F0 /* SBJsonParser.m in Sources */,
 				CA7280E11C81DABC00F642F0 /* NSData+ImageContentType.m in Sources */,
 				CA72809C1C816FEA00F642F0 /* SBJSON.m in Sources */,
+				CA72810D1C82180900F642F0 /* BKCurrencyTextField.m in Sources */,
 				CA72808B1C808D7E00F642F0 /* PunchhSoapApiClient.m in Sources */,
 				CAF088691C7DBE9500B33CEC /* AppDelegate.m in Sources */,
+				CA72810B1C82180900F642F0 /* BKCardNumberLabel.m in Sources */,
 				CA7280E41C81DABC00F642F0 /* SDWebImageDecoder.m in Sources */,
 				CAF088811C7DC0DF00B33CEC /* BarCodeScannerView.m in Sources */,
+				CA7281151C82184300F642F0 /* PaymentViewController.m in Sources */,
 				CAF088661C7DBE9500B33CEC /* main.m in Sources */,
 				CA7280B31C818A5D00F642F0 /* ItemDetails.m in Sources */,
+				CA7281111C82180900F642F0 /* Luhn.m in Sources */,
 				CA7280A61C81890200F642F0 /* CartItem.m in Sources */,
 				CA7280E81C81DABC00F642F0 /* SDWebImagePrefetcher.m in Sources */,
 				CA7280E01C81DABC00F642F0 /* MKAnnotationView+WebCache.m in Sources */,

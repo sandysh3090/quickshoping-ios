@@ -1,9 +1,9 @@
 //
 //  QRCodeScannerView.h
-//  Punchh Framework
+//  ios dev Framework
 //
-//  Created by Sharad Shankar on 30/09/12.
-//  Copyright (c) 2013 Punchh. All rights reserved.
+//  Created by sandeep sharma on 30/09/12.
+//  Copyright (c) 2013 ios dev. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

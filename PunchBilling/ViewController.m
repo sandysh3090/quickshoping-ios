@@ -3,11 +3,10 @@
 //  PunchBilling
 //
 //  Created by sandeep kumar sharma on 24/02/16.
-//  Copyright © 2016 Punchh Inc. All rights reserved.
+//  Copyright © 2016 ios dev Inc. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "PunchhZBarReaderViewController.h"
 #import "BarCodeScannerView.h"
 #import "CustomBarCodeScannerViewController.h"
 #import "reviewTableViewCell.h"
@@ -19,6 +18,7 @@
 #import "ItemDetails.h"
 #import "UserCart.h"
 #import "UIImageView+WebCache.h"
+#import "PaymentViewController.h"
 
 @interface ViewController ()<AVCaptureMetadataOutputObjectsDelegate> {
     CustomBarCodeScannerViewController *scannerController;
@@ -153,11 +153,11 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
         updateindex=0.0;
         [self editModeforproduct];
     } else {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"Network not reachable,try again later" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"This product is not available in stock." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
         self.codeScannerView.alpha=1.0;
         newCaptureVideoPreviewLayer.hidden=NO;
-        [captureSession stopRunning];
+        [captureSession startRunning];
     }
 
    
@@ -263,42 +263,27 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 }
 
 -(IBAction)checkOutBtnTap:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks"
-                                                    message:@"Complete your shoping."
-                                                   delegate: self
-                                          cancelButtonTitle:@"NO"
-                                          otherButtonTitles:@"YES", nil];
-    [alert show];
+    if ([UserCart sharedCart].itemDetails.count==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"Please add Product to Cart" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+    } else {
+        NSString *totalprice;
+        for (ItemDetails *dic in [UserCart sharedCart].itemDetails) {
+            totalprice=[NSString stringWithFormat:@"%ld",[dic.itemOurPrice integerValue]+totalprice.integerValue];
+        }
+        [UserCart sharedCart].itemOurPrice=totalprice;
+        [self performSegueWithIdentifier:@"paymentPage" sender:nil];
+    }
+    
     
 }
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 0:{
-        }
-            break;
-        case 1:
-        {
-            PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
-            NSDictionary *bodyD=[[UserCart sharedCart] dictionaryRepresentation];
-            [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/YES",API_PATH] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
-                NSLog(@"ghgh %@",response);
-                billDIC=[[NSDictionary alloc]initWithDictionary:response];
-                [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Error" message:@"Network not reachable,try again later" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                [alert show];
-            }];
-        }
-            break;
-        default:
-            break;
-    }
-}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"chekoutViewcontroller"]) {
-        checkoutViewController *viewController = segue.destinationViewController;
-       viewController.billDic = billDIC;
+    if ([segue.identifier isEqualToString:@"paymentPage"]) {
+//        checkoutViewController *viewController = segue.destinationViewController;
+//       viewController.billDic = billDIC;
+        PaymentViewController *viewcontroller=segue.destinationViewController;
+        viewcontroller.usercart=[UserCart sharedCart];
     }
 }
 

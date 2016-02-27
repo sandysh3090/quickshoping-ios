@@ -3,11 +3,12 @@
 //  PunchBilling
 //
 //  Created by sandeep kumar sharma on 27/02/16.
-//  Copyright © 2016 Punchh Inc. All rights reserved.
+//  Copyright © 2016 ios dev Inc. All rights reserved.
 //
 
 #import "checkoutViewController.h"
 #import "LocationListViewController.h"
+#import "UserCart.h"
 
 @interface checkoutViewController ()
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"billdic%@",self.billDic);
+    backtohome.layer.cornerRadius=5.0;
     CIImage *img=[self createQRForString:[self.billDic valueForKey:@"bill_id"]];
     qrcodeimage.image=[UIImage imageWithCIImage:img];
     // Do any additional setup after loading the view.
@@ -39,6 +41,7 @@
 -(IBAction)BacktohomeBtnTap:(id)sender {
 //    LocationListViewController *locationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"locationviewcontroller"];
 //    [self.navigationController pushViewController:locationViewController animated:YES];
+    [[UserCart sharedCart] emptyCart];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

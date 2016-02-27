@@ -26,4 +26,5 @@
 
 - (void)addItem:(Item*)item;
 + (UserCart *)sharedCart;
+- (void)emptyCart;
 @end
