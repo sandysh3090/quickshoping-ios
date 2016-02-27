@@ -11,14 +11,21 @@
 #import "BarCodeScannerView.h"
 #import "CustomBarCodeScannerViewController.h"
 #import "reviewTableViewCell.h"
+#import "PunchhSoapApiClient.h"
+#import "MBProgressHUD.h"
+#import "JSON.h"
+#import "checkoutViewController.h"
+#import "Item.h"
+#import "ItemDetails.h"
+#import "UserCart.h"
+#define apipath @"http://192.168.1.6/pos_bill/api/v1/"
 
 @interface ViewController ()<AVCaptureMetadataOutputObjectsDelegate> {
     CustomBarCodeScannerViewController *scannerController;
     AVCaptureSession *captureSession;
-    NSMutableArray *listOfproduct;
     NSInteger updateindex;
-    NSDictionary *editproductdic;
     AVCaptureVideoPreviewLayer *newCaptureVideoPreviewLayer;
+    Item * selectedItem;
 }
 @property (strong, nonatomic) UIView * codeScannerView;
 
@@ -29,11 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden=YES;
-    listOfproduct =[[NSMutableArray alloc]init];
      editView.alpha=0.0;
     updateindex=0.0;
 
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(IBAction)backBtnTap:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(IBAction)scanBtnTap {
@@ -71,12 +80,12 @@
         //You should check here to see if the session supports these types, if they aren't support you'll get an exception
         output.metadataObjectTypes = @[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode];
         newCaptureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
-        newCaptureVideoPreviewLayer.frame =CGRectMake(0, 60, 320, 150);// scannerController.view.bounds;
+        newCaptureVideoPreviewLayer.frame =CGRectMake(0, 60, 320, 119);// scannerController.view.bounds;
         newCaptureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         [self.view.layer insertSublayer:newCaptureVideoPreviewLayer above:self.view.layer];
         
         
-        self.codeScannerView = [[BarCodeScannerView alloc] initWithFrame:CGRectMake(0, 60, 320, 150)                                                       withScannerAction:nil];
+        self.codeScannerView = [[BarCodeScannerView alloc] initWithFrame:CGRectMake(0, 60, 320, 119)                                                       withScannerAction:nil];
         
         [self.view addSubview:self.codeScannerView];
         UIImageView *_bottomImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scanner_top_bar"]];
@@ -118,26 +127,38 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
         self.codeScannerView.alpha=0.0;
         newCaptureVideoPreviewLayer.hidden=YES;
         [captureSession stopRunning];
-        updateindex=0.0;
-        editproductdic=[NSDictionary dictionaryWithObjectsAndKeys:@"lays",@"productname",@"5",@"productprice",@"4",@"ourprice",@"1",@"productquantity", nil];
-        [self editModeforproduct];
+        [self getProductDetails:@""];
         
-
     }
 }
 
+
+-(void)getProductDetails:(NSString *)barcode {
+    NSError *error;
+        NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@product/scan/8791238980",apipath]] encoding:NSUTF8StringEncoding error:&error];
+    NSLog(@"data %@ error %@", str, error);
+    
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dictionary =[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSLog(@"%@",dictionary);
+    
+    selectedItem = [[Item alloc] initWithDictionary:dictionary];
+    
+    updateindex=0.0;
+    [self editModeforproduct];
+}
 
 
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     updateindex=indexPath.row;
-    editproductdic=[listOfproduct objectAtIndex:indexPath.row];;
+     selectedItem = [[UserCart sharedCart].itemDetails objectAtIndex:indexPath.row].item;
     [self editModeforproduct];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return listOfproduct.count;
+    return [UserCart sharedCart].itemDetails.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,8 +167,10 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
     cell = (reviewTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
-    cell.productname.text=[[listOfproduct objectAtIndex:indexPath.row]valueForKey:@"productname"];
-    cell.productprice.text=[NSString stringWithFormat:@"%@ ",[[listOfproduct objectAtIndex:indexPath.row]valueForKey:@"productquantity"]];
+    cell.productname.text=[[UserCart sharedCart].itemDetails objectAtIndex:indexPath.row].item.title;
+    cell.productprice.text=[[UserCart sharedCart].itemDetails objectAtIndex:indexPath.row].itemOurPrice;
+    cell.productdetail.text=[[UserCart sharedCart].itemDetails objectAtIndex:indexPath.row].item.detail;
+    cell.productqualty.text=[NSString stringWithFormat:@"QTY:%@",[[UserCart sharedCart].itemDetails objectAtIndex:indexPath.row].itemQty];
     
     return cell;
 }
@@ -158,13 +181,12 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 
 
 -(void)editModeforproduct {
-    productName.text=[editproductdic valueForKey:@"productname"];
-    productPrice.text=[editproductdic valueForKey:@"productprice"];
-    ourPrice.text=[editproductdic valueForKey:@"ourprice"];
-    productQuantity.text=[editproductdic valueForKey:@"productquantity"];
-    editView.alpha=1.0;
+    productName.text = selectedItem.title;
+    productPrice.text = selectedItem.orignalPrice;
+    ourPrice.text = selectedItem.ourPrice;
+    productQuantity.text = @"1";
+    editView.alpha = 1.0;
     [editView bringSubviewToFront:self.view];
-    
 }
 
 -(IBAction)cancelBtnTap:(id)sender {
@@ -175,11 +197,15 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 }
 
 -(IBAction)AddtoCartBtnTap:(id)sender {
-     [captureSession startRunning];
+    [captureSession startRunning];
     editView.alpha=0.0;
-    NSMutableDictionary *tempdic=[NSMutableDictionary dictionaryWithDictionary:editproductdic];
-    [tempdic setObject:productQuantity.text forKey:@"productquantity"];
-    [listOfproduct insertObject:tempdic atIndex:updateindex];
+    ItemDetails * itemDetails = [[ItemDetails alloc] init];
+    itemDetails.item = selectedItem;
+    itemDetails.itemQty = productQuantity.text;
+    itemDetails.itemOrignalCost = [NSString stringWithFormat:@"%0.2f",[selectedItem.orignalPrice floatValue] * [productQuantity.text floatValue]];
+    itemDetails.itemOurPrice = [NSString stringWithFormat:@"%0.2f",[selectedItem.ourPrice floatValue] * [productQuantity.text floatValue]];
+    [[UserCart sharedCart].itemDetails addObject:itemDetails];
+    
     self.codeScannerView.alpha=1.0;
     newCaptureVideoPreviewLayer.hidden=NO;
     [captureSession startRunning];
@@ -200,6 +226,16 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)checkOutBtnTap:(id)sender {
+    [self performSegueWithIdentifier:@"chekoutViewcontroller" sender:nil];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"chekoutViewcontroller"]) {
+        checkoutViewController *viewController = segue.destinationViewController;
+      //  viewController.billArray = listOfproduct;
+    }
 }
 
 @end

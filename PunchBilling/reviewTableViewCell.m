@@ -9,7 +9,7 @@
 #import "reviewTableViewCell.h"
 
 @implementation reviewTableViewCell
-@synthesize productname,productprice,productImg;
+@synthesize productname,productprice,productImg,productdetail,productqualty;
 - (void)awakeFromNib {
     // Initialization code
 }

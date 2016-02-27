@@ -84,7 +84,7 @@
 
 -(void)translateDown {
     [UIView animateWithDuration:5.0 animations:^{
-        scannerView.transform = CGAffineTransformMakeTranslation(0.0,148.0);
+        scannerView.transform = CGAffineTransformMakeTranslation(0.0,119);
 
     } completion:^(BOOL finished) {
         if (finished)
@@ -108,7 +108,7 @@
 {
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect _drawRect = CGRectMake(20.0, 0, 280, 150.0);
+    CGRect _drawRect = CGRectMake(20.0, 0, 280, 119);
     CGFloat _width = 40.0;
     //    UIColor *linStrokeColor = [UIColor colorWithRed:195.0/255.0 green:195.0/255.0 blue:195.0/255.0 alpha:1.0];
     CGContextSetStrokeColorWithColor(context, linStrokeColor.CGColor);

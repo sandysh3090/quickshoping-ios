@@ -11,12 +11,10 @@
 
 @interface PunchhSoapApiClient : NSObject
 
-- (void)getSoapApiResponse:(NSString *)URLString
-                    method:(NSString *)method
-             setHTTPMethod:(NSString *)httpMthod
-                parameters:(NSArray *)parameters
-                   success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                   failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+-(void)getSoapApiResponse:(NSString *)URLString
+            setHTTPMethod:(NSString *)httpMthod
+                  success:(void (^)(AFHTTPRequestOperation *, id))success
+                  failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
 
 -(NSMutableURLRequest *)createSoapMsgAndRquest:(NSArray *)parameters setHTTPMethod:(NSString *)httpMthod setrequestMethod:(NSString *)method setRequestUrl:(NSString *)URLString;
 

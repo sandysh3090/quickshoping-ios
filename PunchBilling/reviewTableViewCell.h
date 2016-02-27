@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface reviewTableViewCell : UITableViewCell
-@property (nonatomic,strong) IBOutlet UILabel *productname,*productprice;
+@property (nonatomic,strong) IBOutlet UILabel *productname,*productdetail,*productprice,*productqualty;
 @property (nonatomic,strong) IBOutlet UIImageView *productImg;
 @end

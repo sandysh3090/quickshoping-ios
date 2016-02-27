@@ -13,26 +13,21 @@
 @implementation PunchhSoapApiClient
 
 -(void)getSoapApiResponse:(NSString *)URLString
-                   method:(NSString *)method
             setHTTPMethod:(NSString *)httpMthod
-               parameters:(NSArray *)parameters
                   success:(void (^)(AFHTTPRequestOperation *, id))success
                   failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
 {
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[self createSoapMsgAndRquest:parameters setHTTPMethod:httpMthod setrequestMethod:method setRequestUrl:URLString]];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
+    [theRequest setHTTPMethod:httpMthod];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:theRequest];
     
     operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    if ([AFNetworkReachabilityManager sharedManager].reachable){
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+         success(operation, responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        failure(operation, error);
     }];
-    } else {
-        UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Error" message:@"Network not Reachable." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-        [alert show];
-    }
     [[NSOperationQueue mainQueue] addOperation:operation];
     
 }
