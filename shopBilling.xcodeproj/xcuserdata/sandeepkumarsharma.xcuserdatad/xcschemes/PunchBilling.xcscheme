@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAF088601C7DBE9500B33CEC"
-               BuildableName = "PunchBilling.app"
-               BlueprintName = "PunchBilling"
-               ReferencedContainer = "container:PunchBilling.xcodeproj">
+               BuildableName = "shopBilling.app"
+               BlueprintName = "shopBilling"
+               ReferencedContainer = "container:shopBilling.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAF088601C7DBE9500B33CEC"
-            BuildableName = "PunchBilling.app"
-            BlueprintName = "PunchBilling"
-            ReferencedContainer = "container:PunchBilling.xcodeproj">
+            BuildableName = "shopBilling.app"
+            BlueprintName = "shopBilling"
+            ReferencedContainer = "container:shopBilling.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAF088601C7DBE9500B33CEC"
-            BuildableName = "PunchBilling.app"
-            BlueprintName = "PunchBilling"
-            ReferencedContainer = "container:PunchBilling.xcodeproj">
+            BuildableName = "shopBilling.app"
+            BlueprintName = "shopBilling"
+            ReferencedContainer = "container:shopBilling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAF088601C7DBE9500B33CEC"
-            BuildableName = "PunchBilling.app"
-            BlueprintName = "PunchBilling"
-            ReferencedContainer = "container:PunchBilling.xcodeproj">
+            BuildableName = "shopBilling.app"
+            BlueprintName = "shopBilling"
+            ReferencedContainer = "container:shopBilling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

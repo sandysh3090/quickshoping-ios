@@ -1,6 +1,6 @@
 //
 //  BarCodeScannerView.h
-//  Punchh Framework
+//  shop Framework
 //
 //  Created by Sharad Shankar on 30/09/12.
 //  Copyright (c) 2013 ios dev. All rights reserved.

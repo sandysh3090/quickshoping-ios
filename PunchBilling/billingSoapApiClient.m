@@ -6,12 +6,12 @@
 //  Copyright © 2015 IOS dev Inc. All rights reserved.
 //
 
-#import "PunchhSoapApiClient.h"
+#import "billingSoapApiClient.h"
 #import "JSON.h"
 
 
 
-@implementation PunchhSoapApiClient
+@implementation billingSoapApiClient
 
 -(void)getSoapApiResponse:(NSString *)URLString
             setHTTPMethod:(NSString *)httpMthod

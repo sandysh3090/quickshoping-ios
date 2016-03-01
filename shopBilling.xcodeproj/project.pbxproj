@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA72808B1C808D7E00F642F0 /* PunchhSoapApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA72808A1C808D7E00F642F0 /* PunchhSoapApiClient.m */; settings = {ASSET_TAGS = (); }; };
+		CA72808B1C808D7E00F642F0 /* billingSoapApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA72808A1C808D7E00F642F0 /* billingSoapApiClient.m */; settings = {ASSET_TAGS = (); }; };
 		CA72809A1C816FEA00F642F0 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CA72808F1C816FEA00F642F0 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA72809B1C816FEA00F642F0 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280911C816FEA00F642F0 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA72809C1C816FEA00F642F0 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7280931C816FEA00F642F0 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -69,8 +69,8 @@
 		0A4E43F4C3D86FE0C0978959 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1E14BC530EE25986EA9B16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90647B281EEC3918ECD13EED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		CA7280891C808D7E00F642F0 /* PunchhSoapApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PunchhSoapApiClient.h; sourceTree = "<group>"; };
-		CA72808A1C808D7E00F642F0 /* PunchhSoapApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PunchhSoapApiClient.m; sourceTree = "<group>"; };
+		CA7280891C808D7E00F642F0 /* billingSoapApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = billingSoapApiClient.h; sourceTree = "<group>"; };
+		CA72808A1C808D7E00F642F0 /* billingSoapApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = billingSoapApiClient.m; sourceTree = "<group>"; };
 		CA72808D1C816FEA00F642F0 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		CA72808E1C816FEA00F642F0 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		CA72808F1C816FEA00F642F0 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		CAED33D11C7DEC5100B6B0EB /* reviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reviewTableViewCell.m; sourceTree = "<group>"; };
 		CAED33D31C7DEFA400B6B0EB /* QRCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeScannerView.h; sourceTree = "<group>"; };
 		CAED33D41C7DEFA400B6B0EB /* QRCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeScannerView.m; sourceTree = "<group>"; };
-		CAF088611C7DBE9500B33CEC /* PunchBilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunchBilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF088611C7DBE9500B33CEC /* shopBilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopBilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF088651C7DBE9500B33CEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF088671C7DBE9500B33CEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF088681C7DBE9500B33CEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 		CAF088621C7DBE9500B33CEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAF088611C7DBE9500B33CEC /* PunchBilling.app */,
+				CAF088611C7DBE9500B33CEC /* shopBilling.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -360,8 +360,8 @@
 				CA7280F21C82180900F642F0 /* BKMoneyKit */,
 				CA7280BE1C81DA8A00F642F0 /* sdwebchche */,
 				CA72808C1C816F5200F642F0 /* json */,
-				CA7280891C808D7E00F642F0 /* PunchhSoapApiClient.h */,
-				CA72808A1C808D7E00F642F0 /* PunchhSoapApiClient.m */,
+				CA7280891C808D7E00F642F0 /* billingSoapApiClient.h */,
+				CA72808A1C808D7E00F642F0 /* billingSoapApiClient.m */,
 				CAF088651C7DBE9500B33CEC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -396,9 +396,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAF088601C7DBE9500B33CEC /* PunchBilling */ = {
+		CAF088601C7DBE9500B33CEC /* shopBilling */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAF088781C7DBE9500B33CEC /* Build configuration list for PBXNativeTarget "PunchBilling" */;
+			buildConfigurationList = CAF088781C7DBE9500B33CEC /* Build configuration list for PBXNativeTarget "shopBilling" */;
 			buildPhases = (
 				98513C7D701565CF6CF04ADD /* Check Pods Manifest.lock */,
 				CAF0885D1C7DBE9500B33CEC /* Sources */,
@@ -410,9 +410,9 @@
 			);
 			dependencies = (
 			);
-			name = PunchBilling;
+			name = shopBilling;
 			productName = PunchBilling;
-			productReference = CAF088611C7DBE9500B33CEC /* PunchBilling.app */;
+			productReference = CAF088611C7DBE9500B33CEC /* shopBilling.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -429,7 +429,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CAF0885C1C7DBE9500B33CEC /* Build configuration list for PBXProject "PunchBilling" */;
+			buildConfigurationList = CAF0885C1C7DBE9500B33CEC /* Build configuration list for PBXProject "shopBilling" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -442,7 +442,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAF088601C7DBE9500B33CEC /* PunchBilling */,
+				CAF088601C7DBE9500B33CEC /* shopBilling */,
 			);
 		};
 /* End PBXProject section */
@@ -535,7 +535,7 @@
 				CA7280E11C81DABC00F642F0 /* NSData+ImageContentType.m in Sources */,
 				CA72809C1C816FEA00F642F0 /* SBJSON.m in Sources */,
 				CA72810D1C82180900F642F0 /* BKCurrencyTextField.m in Sources */,
-				CA72808B1C808D7E00F642F0 /* PunchhSoapApiClient.m in Sources */,
+				CA72808B1C808D7E00F642F0 /* billingSoapApiClient.m in Sources */,
 				CAF088691C7DBE9500B33CEC /* AppDelegate.m in Sources */,
 				CA72810B1C82180900F642F0 /* BKCardNumberLabel.m in Sources */,
 				CA7280E41C81DABC00F642F0 /* SDWebImageDecoder.m in Sources */,
@@ -657,8 +657,8 @@
 				INFOPLIST_FILE = PunchBilling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.punchh.PunchBilling;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shop.PunchBilling;
+				PRODUCT_NAME = shopBilling;
 			};
 			name = Debug;
 		};
@@ -673,15 +673,15 @@
 				INFOPLIST_FILE = PunchBilling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.punchh.PunchBilling;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shop.PunchBilling;
+				PRODUCT_NAME = shopBilling;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CAF0885C1C7DBE9500B33CEC /* Build configuration list for PBXProject "PunchBilling" */ = {
+		CAF0885C1C7DBE9500B33CEC /* Build configuration list for PBXProject "shopBilling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAF088761C7DBE9500B33CEC /* Debug */,
@@ -690,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAF088781C7DBE9500B33CEC /* Build configuration list for PBXNativeTarget "PunchBilling" */ = {
+		CAF088781C7DBE9500B33CEC /* Build configuration list for PBXNativeTarget "shopBilling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAF088791C7DBE9500B33CEC /* Debug */,

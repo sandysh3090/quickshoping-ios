@@ -3,7 +3,7 @@
 //  PunchBilling
 //
 //  Created by sandeep kumar sharma on 28/02/16.
-//  Copyright © 2016 Punchh Inc. All rights reserved.
+//  Copyright © 2016 ios dev . All rights reserved.
 //
 
 #import "HistoryViewController.h"

@@ -10,7 +10,7 @@
 #import "BarCodeScannerView.h"
 #import "CustomBarCodeScannerViewController.h"
 #import "reviewTableViewCell.h"
-#import "PunchhSoapApiClient.h"
+#import "billingSoapApiClient.h"
 #import "MBProgressHUD.h"
 #import "JSON.h"
 #import "checkoutViewController.h"
@@ -142,7 +142,7 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 
 
 -(void)getProductDetails:(NSString *)barcode {
-    PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
+    billingSoapApiClient *service = [[billingSoapApiClient alloc] init];
     [service getSoapApiResponse:[NSString stringWithFormat:@"%@product/scan/%@",API_PATH,barcode] setHTTPMethod:@"GET" bodydata:nil success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
         selectedItem = [[Item alloc] initWithDictionary:response];
         updateindex=0.0;

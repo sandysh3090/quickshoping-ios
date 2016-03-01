@@ -9,7 +9,7 @@
 #import "PaymentViewController.h"
 #import "Luhn.h"
 #import "NSString+Additional.h"
-#import "PunchhSoapApiClient.h"
+#import "billingSoapApiClient.h"
 #import "JSON.h"
 #import "checkoutViewController.h"
 #import "PaymentDetail.h"
@@ -98,7 +98,7 @@
                 break;
             case 1:
             {
-                PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
+                billingSoapApiClient *service = [[billingSoapApiClient alloc] init];
                 NSDictionary *bodyD=[[UserCart sharedCart] dictionaryRepresentation];
                 [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/NO/%@",API_PATH,self.usercart.itemOurPrice] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
                     NSLog(@"ghgh %@",response);
@@ -151,7 +151,7 @@
     self.usercart.paymentDetail.cardHolderName=[NSString stringWithFormat:@"%@ %@",txtFName.text,txtLName.text];
     self.usercart.paymentDetail.cardNo=txtCardNumber.text;
     [[MBProgressHUD showHUDAddedTo:self.view animated:YES] setLabelText:@"Processing"];
-    PunchhSoapApiClient *service = [[PunchhSoapApiClient alloc] init];
+    billingSoapApiClient *service = [[billingSoapApiClient alloc] init];
     NSDictionary *bodyD=[self.usercart dictionaryRepresentation];
     [service getSoapApiResponse:[NSString stringWithFormat:@"%@bill/YES/%@",API_PATH,self.usercart.itemOurPrice] setHTTPMethod:@"POST" bodydata:[bodyD JSONRepresentation] success:^(AFHTTPRequestOperation *operation, NSDictionary* response) {
         NSLog(@"ghgh %@",response);
